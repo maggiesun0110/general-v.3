@@ -176,6 +176,64 @@ nav{
 #battery{
     grid-column: 9 / span 3;
     grid-row: 1 / span 2;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#batteryBox{
+    width: 100%;
+    height: 100%;
+    box-shadow: 4px 4px 10px rgba(115, 114, 114, 0.1), 
+    -4px -4px 6px rgba(115, 114, 114, 0.1);
+    /* border: 2px solid white; */
+    border-radius: 40px;
+    align-items: center;
+    /* box-shadow: 
+    inset 4px 4px 8px #333333, 
+    inset -4px -4px 8px #333333; */
+    padding: 4px;
+}
+
+#batteryOutline{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    border-color: #1b1e23;
+    box-shadow: 
+    inset 5px 5px 8px #121316, 
+    inset -5px -5px 8px #121316;
+    /* box-shadow: 4px 4px 8px rgba(225,225,225,0.1) -4px 8px rgba(225,225,225,0.1); */
+    display: flex;
+    flex-direction: column;
+    justify-content: bottom;
+    align-items: center;
+    padding: 5px;
+}
+
+#batteryFill{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #4caf50;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    border-radius: 8px 0 0 8px;
+    z-index: 1;
+}
+
+#batteryPercentage{
+    position: relative;
+    z-index: 2;
+    margin-top: 0.6vh;
+    font-size: smaller;
+}
+
+#batteryState{
+    font-size: smaller;
+    position: relative;
+    z-index: 2;
 }
 
 #inspo{
