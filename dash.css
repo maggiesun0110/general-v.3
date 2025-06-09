@@ -196,6 +196,7 @@ nav{
 }
 
 #batteryOutline{
+    position: relative;
     width: 100%;
     height: 100%;
     border-radius: 40px;
@@ -203,30 +204,29 @@ nav{
     box-shadow: 
     inset 5px 5px 8px #121316, 
     inset -5px -5px 8px #121316;
-    /* box-shadow: 4px 4px 8px rgba(225,225,225,0.1) -4px 8px rgba(225,225,225,0.1); */
     display: flex;
     flex-direction: column;
-    justify-content: bottom;
+    justify-content: center;
     align-items: center;
     padding: 5px;
 }
 
 #batteryFill{
+    transform: scale(0.95);
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    background: #4caf50;
+    /* background: rgb(${fillColor[0]}, ${fillColor[1]}, ${fillColor[2]*/
     width: 0%;
     transition: width 0.5s ease-in-out;
-    border-radius: 8px 0 0 8px;
+    border-radius: 40px;
     z-index: 1;
 }
 
 #batteryPercentage{
     position: relative;
     z-index: 2;
-    margin-top: 0.6vh;
     font-size: smaller;
 }
 
