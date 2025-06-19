@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", ()=> {
+
     //^^ waits for window to load before running
     navigator.getBattery().then(function (battery){ 
         //get battery info use .then bc it returns a promise (placeholder for value not there yet) so after you get the battery then....
@@ -18,7 +19,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
             if(charging){
                 text += "charging";
                 batteryFill.style.backgroundColor = "#79A27D";
-            } else if(percentage <= 20){
+            } else if(percent <= 20){
                 text += "low battery";
                 batteryFill.style.backgroundColor = "#7a2e2e";
             } else{
@@ -35,4 +36,21 @@ window.addEventListener("DOMContentLoaded", ()=> {
         battery.addEventListener("levelchange", updateBatteryDisplay);
         battery.addEventListener("chargingchange", updateBatteryDisplay);
     })
+
+    //== Date Section ==
+    const date = new Date();
+    const dateElement = document.getElementById("date");
+    const timeElement = document.getElementById("twenty4time");
+
+    dateElement.textContent =  `${date.toDateString()}`;
+    timeElement.textContent = `${date.toLocaleTimeString()}`;
+
+    function updateTime(){
+        const now = new Date();
+        timeElement.textContent = now.toLocaleTimeString();
+    }
+
+    updateTime();
+
+    setInterval(updateTime, 500);
 })
