@@ -9,9 +9,11 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Example Route
 app.get('/', (req, res) => {
-  res.json({ message: "Hello from backend!" });
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Contact Form Route
