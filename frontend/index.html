@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dashboard</title>
+        <link rel = "stylesheet" href = "dash.css">
+        <script src = "dash.js" defer></script>
+    </head>
+    <body>
+        <div class = "grid">
+            <nav class = "gridItem">
+                <div class = "navButtonDiv" id = "dashButton">
+                    <button onclick = "window.location.href = 'index.html'">⌂</button>
+                </div>
+                <div class = "navButtonDiv" id = "codeButton">
+                    <button onclick = "window.location.href = 'code.html'">{}</button>
+                </div>
+                <div class = "navButtonDiv" id = "lockButton">
+                    <button onclick = lock()>ꗃ</button>
+                </div>
+                <div class = "navButtonDiv" id = "debateButton">
+                    <button onclick = "window.location.href = 'debate.html'">🗣</button>
+                </div>
+            </nav>
+            <div class = "gridItem" id = "time">
+                <p id = "date"></p>
+                <p id = "twenty4time"></p>
+            </div>
+            <div class = "gridItem" id = "timer">timer</div>
+            <div class = "gridItem" id = "weather">
+                <div id = "weatherScroll">
+                    <a class="weatherwidget-io" href="https://forecast7.com/en/37d35n121d96/santa-clara/" data-label_1="santa clara" data-label_2="weather" data-font="Roboto" data-icons="Climacons Animated" data-days="5" data-theme="dark" data-basecolor="#1b1e23" data-shadow="#0D0D0D" data-accent="" data-lowcolor="" data-suncolor="#f3cc0b" >santa clara weather</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                    </script>
+                </div>
+            </div>
+            <div class = "gridItem" id = "todo">todo</div>
+            <div class = "gridItem" id = "sleep">sleep</div>
+            <div class = "gridItem" id = "inspo">inspo</div>
+            <div class = "gridItem" id = "water">water</div>
+            <div class = "gridItem" id = "currentFocus">focus</div>
+            <div class = "gridItem" id = "wtvuwant">wtvuwant</div>
+            <div class = "gridItem" id = "calendar">calendar</div>
+            <div class = "gridItem" id = "grades">grades</div>
+            <div class = "gridItem" id = "battery">
+                <div id = "batteryBox">
+                    <div id = "batteryOutline">
+                        <div id = "batteryFill"></div>
+                        <p id = "batteryPercentage"></p>
+                        <p id = "batteryState"></p>
+                    </div>
+                </div>
+
+            </div>
+            <div class = "gridItem" id = "music">
+                <iframe id = "ytPlaylist" width = 100% height = 100% src = "https://www.youtube.com/embed/playlist?list=PLHkiiErYpUwjIukTQa0hkroDnZCnQS8eV&si=eFLRXf18bSTqdW9T"></iframe>
+            </div>
+            <div class = "gridItem" id = "misc">
+                misc
+                <div class = "gridItem" id = "wishlist">wish</div>
+            </div>
+        </div>
+    </body>
+
+    
+</html>
