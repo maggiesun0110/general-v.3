@@ -5,12 +5,12 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://your-site.netlify.app' // Allow Netlify frontend
+  origin: 'https://smqms.netlify.app' // Allow Netlify frontend
 }));
 app.use(express.json());
 
 // Example Route
-app.get('/api/hello', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ message: "Hello from backend!" });
 });
 
