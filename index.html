@@ -3,7 +3,7 @@
     <head>
         <title>dashboard</title>
         <link rel = "stylesheet" href = "dash.css">
-        <script src = "dash.js" defer></script>
+        <script defer src = "dash.js"></script>
     </head>
     <body>
         <div class = "grid">
@@ -25,7 +25,9 @@
                 <p id = "date"></p>
                 <p id = "twenty4time"></p>
             </div>
-            <div class = "gridItem" id = "timer">timer</div>
+            <div class = "gridItem" id = "timer">
+                timer
+            </div>
             <div class = "gridItem" id = "weather">
                 <div id = "weatherScroll">
                     <a class="weatherwidget-io" href="https://forecast7.com/en/37d35n121d96/santa-clara/" data-label_1="santa clara" data-label_2="weather" data-font="Roboto" data-icons="Climacons Animated" data-days="5" data-theme="dark" data-basecolor="#1b1e23" data-shadow="#0D0D0D" data-accent="" data-lowcolor="" data-suncolor="#f3cc0b" >santa clara weather</a>
@@ -35,7 +37,12 @@
                 </div>
             </div>
             <div class = "gridItem" id = "todo">todo</div>
-            <div class = "gridItem" id = "sleep">sleep</div>
+            <div class = "gridItem" id = "modeToggle">
+                <label class="switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+                </label>
+            </div>
             <div class = "gridItem" id = "inspo">inspo</div>
             <div class = "gridItem" id = "water">water</div>
             <div class = "gridItem" id = "currentFocus">focus</div>

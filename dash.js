@@ -1,19 +1,4 @@
 window.addEventListener("DOMContentLoaded", ()=> {
-
-    fetch("https://backend.onrender.com/api/contact", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        name: "Maggie",
-        email: "maggie@example.com",
-        message: "Hello!"
-    })
-    })
-    .then(res => res.json())
-    .then(data => console.log(data));
-
     //^^ waits for window to load before running
     navigator.getBattery().then(function (battery){ 
         //get battery info use .then bc it returns a promise (placeholder for value not there yet) so after you get the battery then....
@@ -67,4 +52,16 @@ window.addEventListener("DOMContentLoaded", ()=> {
     updateTime();
 
     setInterval(updateTime, 500);
+
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (prefersLight || localStorage.getItem('lightMode') === 'true') {
+        document.body.classList.add('lightmode');
+        document.getElementById('mode-toggle').checked = true;
+    }
+
+    // Update storage when toggling
+    modeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("lightmode");
+        localStorage.setItem('lightMode', document.body.classList.contains('lightmode'));
+    });
 })
