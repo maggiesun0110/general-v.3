@@ -38,9 +38,12 @@
             </div>
             <div class = "gridItem" id = "todo">todo</div>
             <div class = "gridItem" id = "modeToggle">
-                <label class="switch">
+                <label class="switch" role = "switch" aria-checked = "false">
                 <input type="checkbox" id="mode-toggle">
-                <span class="slider"></span>
+                <span class="slider">
+                    <span class="modeLabel left" id = "lightLabel">☀︎</span>
+                    <span class="modeLabel right" id = "darkLabel">☀︎</span>
+                </span>
                 </label>
             </div>
             <div class = "gridItem" id = "inspo">inspo</div>

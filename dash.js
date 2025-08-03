@@ -53,15 +53,72 @@ window.addEventListener("DOMContentLoaded", ()=> {
 
     setInterval(updateTime, 500);
 
+
+    //== Light Mode Toggle ==
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
     if (prefersLight || localStorage.getItem('lightMode') === 'true') {
         document.body.classList.add('lightmode');
         document.getElementById('mode-toggle').checked = true;
+        updateWeatherWidget("pure");
+    } else {
+        updateWeatherWidget("dark");
     }
 
+    function updateWeatherWidget(theme) {
+    const scrollContainer = document.getElementById("weatherScroll");
+
+    // Clear old widget
+    scrollContainer.innerHTML = '';
+
+    // Create new widget
+    const newWidget = document.createElement("a");
+    newWidget.setAttribute("id", "weatherWidget");
+    newWidget.setAttribute("class", "weatherwidget-io");
+    newWidget.setAttribute("href", "https://forecast7.com/en/37d35n121d96/santa-clara/");
+    newWidget.setAttribute("data-label_1", "santa clara");
+    newWidget.setAttribute("data-label_2", "weather");
+    newWidget.setAttribute("data-font", "Roboto");
+    newWidget.setAttribute("data-icons", "Climacons Animated");
+    newWidget.setAttribute("data-days", "5");
+
+    if (theme === "dark") {
+        // Keep your original dark style
+        newWidget.setAttribute("data-theme", "dark");
+        newWidget.setAttribute("data-basecolor", "#1b1e23");
+        newWidget.setAttribute("data-shadow", "#0D0D0D");
+        newWidget.setAttribute("data-suncolor", "#f3cc0b");
+        newWidget.setAttribute("data-accent", "");
+        newWidget.setAttribute("data-lowcolor", "");
+    } else {
+        // New light theme style
+        newWidget.setAttribute("data-theme", "pure");
+        newWidget.setAttribute("data-basecolor", "#eaeaea");
+        newWidget.setAttribute("data-suncolor", "#f3cc0b");
+        newWidget.setAttribute("data-textcolor", "#222222");
+        newWidget.setAttribute("data-cloudcolor", "#444444");
+        newWidget.setAttribute("data-accent", "");
+        newWidget.setAttribute("data-lowcolor", "");
+        newWidget.setAttribute("data-highcolor", "#222222"); // dark gray
+    }
+
+    newWidget.innerText = "santa clara weather";
+
+    scrollContainer.appendChild(newWidget);
+
+    // Re-inject the widget script
+    const script = document.createElement("script");
+    script.src = "https://weatherwidget.io/js/widget.min.js";
+    document.body.appendChild(script);
+}
+
     // Update storage when toggling
-    modeToggle.addEventListener("click", () => {
+    const toggle = document.getElementById("mode-toggle");
+    toggle.addEventListener("change", () => {
         document.body.classList.toggle("lightmode");
         localStorage.setItem('lightMode', document.body.classList.contains('lightmode'));
+        updateWeatherWidget(document.body.classList.contains('lightmode') ? "pure" : "dark");
+
     });
+
+
 })
