@@ -149,6 +149,7 @@ nav{
     -3.5px -3.5px 8px rgba(255, 255, 255, 0.1);
     transition: all 0.2s ease;
     border-radius: 30px;
+    transition: opacity 0.3s ease-in-out
 }
 
 #weatherScroll::-webkit-scrollbar {
