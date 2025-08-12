@@ -1,10 +1,11 @@
-#A general dashboard
+###A general dashboard
 It contains many different smaller projects combined into one page
+still in progress as I become familiar with react and server dev
 
-#how to run
+###how to run
 open `index.html` in browser
 
-#features
+###features
 - todo list
 - grades displayer
 - timer
